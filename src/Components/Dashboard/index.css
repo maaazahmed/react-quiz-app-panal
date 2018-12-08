@@ -1,0 +1,33 @@
+.dashboardContainer{
+    background-image: linear-gradient(to Top left, #530bb0, #d81dc6);
+    height: 100vh;
+    position: fixed ;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-y: scroll
+}
+
+.createQuizContainer{
+    width: 90%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    margin: auto;
+    padding-top: 35px;
+
+}
+
+.stapperContainer{
+    /* width: 70%; */
+    margin: 0px auto
+}
+
+
+.MuiStepIcon-root-55.MuiStepIcon-active-57 {
+    color: #d81dc6 !important;
+}
+
+.MuiStepIcon-root-55.MuiStepIcon-completed-58 {
+    color: #d81dc6 !important;
+}

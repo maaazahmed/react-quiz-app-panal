@@ -1,0 +1,105 @@
+.LoginContainer{
+    background-image: linear-gradient(to Top left, #530bb0, #d81dc6);
+    height: 100vh;
+    position: fixed ;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: right !important
+}
+
+.FormControl_container{
+    margin: 100px auto ;
+    width: 30%;
+    height: 200px;
+}
+
+input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 2px #fff solid;
+    font-size: 15px;
+    color: #fff;
+    outline: none;
+    padding-bottom: 10px;
+    background-color: transparent
+    /* padding-left: 5px */
+}
+
+::placeholder {
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #fff;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #fff;
+}
+
+
+
+.signUpButon {
+    background: linear-gradient(to Top left, #ffffff, #ffffff);
+    border: none;
+    width: 100%;
+    height: 21%;
+    border-radius: 50px;
+    color: #530bb0;
+    font-size: 15px;
+    outline: none;
+    box-shadow: none;
+    padding: 0px;
+
+}
+
+.signUpButon:hover{
+    padding: 2px;
+    background: linear-gradient(to Top left, #530bb0, #d81dc6);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.signUpButon:active{
+   opacity: 0.5;
+}
+
+.h3{
+  color: #fff;
+  letter-spacing: 10px;
+  margin-bottom: 35px;
+}
+
+
+.MuiButton-contained-12 {
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: none !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    background-color: aqua
+
+}
+
+.LoginContainer .MuiButton-root-1 {
+    color: rgba(0, 0, 0, 0.87);
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    min-width: 50px;
+    box-sizing: border-box;
+    min-height: 50px;
+    transition: none;
+    font-weight: 500;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    border-radius: 100px !important;
+    text-transform: none !important;
+    font-weight: bold !important;
+    /* background-color: rgba(0, 0, 0, 0.87) !important; */
+    background-color: rgba(240, 8, 201, 0.5) !important;
+    margin: 10px !important;
+    text-align: center !important
+}
