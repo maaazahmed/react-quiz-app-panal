@@ -1,6 +1,7 @@
 .quiz_form_container{ 
     width: 90%;
-    height: 100%;
+    /* height: 100%; */
+    height: -webkit-fill-available;
     margin: auto
 }
 

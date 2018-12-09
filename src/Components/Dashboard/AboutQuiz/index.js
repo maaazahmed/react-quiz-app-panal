@@ -17,7 +17,8 @@ class AboutQuiz extends Component {
             passingMarks: "",
             markofaQuistion: "",
             time: "",
-            discription: ""
+            discription: "",
+            title:""
         }
     }
 
@@ -29,7 +30,8 @@ class AboutQuiz extends Component {
             passingMarks,
             markofaQuistion,
             time,
-            discription
+            discription,
+            title
         } = this.state
 
         this.setState({
@@ -42,7 +44,8 @@ class AboutQuiz extends Component {
             passingMarks,
             markofaQuistion,
             time,
-            discription
+            discription,
+            title
         }
         this.props.AboutQuizAction(obj)
     }
@@ -58,11 +61,22 @@ class AboutQuiz extends Component {
             passingMarks,
             markofaQuistion,
             time,
-            discription
+            discription,
+            title
         } = this.state
         return (
             <div className="detailContainer" >
                 <div className="DetiolFormContainer" >
+                    <br />
+                    <br />
+                    <input
+                        type="Text"
+                        className="input"
+                        name="title"
+                        onChange={this.on_ChangeHeandler.bind(this)}
+                        value={title}
+                        placeholder="Title" />
+                    <br />
                     <br />
                     <br />
                     <input

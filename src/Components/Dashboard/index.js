@@ -75,9 +75,10 @@ class Dashboard extends Component {
             passingMarks,
             markofaQuistion,
             time,
-            discription
+            discription,
+            title
         } = this.props.aboutQuizData.aboutQuiz
-        if (numberOfQuestion !== undefined && totalMarks !== undefined && passingMarks !== undefined && markofaQuistion !== undefined && time !== undefined && discription !== undefined) {
+        if ( title !== "" && numberOfQuestion !== undefined && totalMarks !== undefined && passingMarks !== undefined && markofaQuistion !== undefined && time !== undefined && discription !== undefined) {
             const { completed } = this.state;
             completed[this.state.activeStep] = true;
             this.setState({

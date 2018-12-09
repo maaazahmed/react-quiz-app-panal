@@ -11,14 +11,16 @@
 
 .createQuizContainer{
     width: 60%;
-    height: 100%;
-    background: rgb(255, 255, 255);
     margin: auto;
-    /* padding-top: 35px; */
+    padding-bottom: 50px;
+    background: rgb(255, 255, 255);
     box-shadow: #d81dc6 0px 32px 50px 1px;
+    /* height: 100%; */
+    /* padding-top: 35px; */
     /* position: fixed ;
     top: 0;
     bottom: 0; */
+
    
 
 }
