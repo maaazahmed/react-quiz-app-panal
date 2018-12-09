@@ -8,7 +8,7 @@ import {
   SignUp,
   LogIn,
   Dashboard
-} from "./Components/index"
+} from "./Components/index";
 
 
 

@@ -1,0 +1,43 @@
+ .detailContainer{
+    width: 100%;
+}
+
+
+.detailContainer .DetiolFormContainer{
+    width: 70%;
+    margin: auto
+} 
+
+
+
+
+.detailContainer.FormControl_container{
+    margin: 100px auto ;
+    width: 30%;
+    height: 200px;
+}
+
+.detailContainer .input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 2px #d81dc6 solid !important;
+    font-size: 15px;
+    color: #d81dc6;
+    outline: none;
+    padding-bottom: 10px;
+    background-color: transparent
+}
+
+.detailContainer ::placeholder {
+    color: #d81dc6 !important ;
+    opacity: 1; /* Firefox */
+}
+
+.detailContainer :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #d81dc6 !important;
+}
+
+.detailContainer ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #d81dc6 !important;
+}

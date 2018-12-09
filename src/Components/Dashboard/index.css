@@ -1,6 +1,6 @@
 .dashboardContainer{
     background-image: linear-gradient(to Top left, #530bb0, #d81dc6);
-    height: 100vh;
+    /* height: 100vh; */
     position: fixed ;
     top: 0;
     bottom: 0;
@@ -10,11 +10,16 @@
 }
 
 .createQuizContainer{
-    width: 90%;
+    width: 60%;
     height: 100%;
     background: rgb(255, 255, 255);
     margin: auto;
-    padding-top: 35px;
+    /* padding-top: 35px; */
+    box-shadow: #d81dc6 0px 32px 50px 1px;
+    /* position: fixed ;
+    top: 0;
+    bottom: 0; */
+   
 
 }
 
@@ -30,4 +35,83 @@
 
 .MuiStepIcon-root-55.MuiStepIcon-completed-58 {
     color: #d81dc6 !important;
+}
+
+.MuiStepConnector-root-104 {
+    flex: none !important ;
+}
+
+.MuiStepper-horizontal-2 {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around !important;
+
+}
+
+.MuiStepButton-root-37 {
+    width: 100%;
+    margin: 0px  !important;
+    padding: 0px !important;
+    box-sizing: content-box;
+    border-radius: 5px !important
+}
+
+.MuiStep-horizontal-33 {
+    background-image: linear-gradient(to Top left, #530bb0, #d81dc6);
+    width: 46%;
+    height: 50px !important;
+    justify-content: center;
+    display: flex;
+    color: #ffffff
+}
+
+.MuiStepLabel-label-47.MuiStepLabel-active-48 {
+    color: #ffffff !important;
+    font-weight: bold;
+
+}
+
+.MuiStepLabel-label-47 {
+    color: rgb(255, 255, 255) !important;
+    font-weight: bold;
+    font-size: 15px !important
+}
+
+
+.MuiStep-horizontal-33:first-child {
+    border-radius: 5px !important;
+}
+
+.MuiStep-horizontal-33:last-child {
+    border-radius: 5px !important;
+}
+
+.MuiStep-horizontal-33 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.dashboardContainer .formButtonContainer{
+    display: flex;
+    justify-content: center !important;
+    width: 70% !important;
+    /* background-color: rgb(22, 22, 22) !important; */
+    margin: auto;
+}
+
+.MuiButton-containedPrimary-126 {
+    color: #fff;
+    background-image: linear-gradient(to Top left, #530bb0, #d81dc6);
+    width: 40% !important;
+
+}
+
+.MuiButton-contained-125 {
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: none !important;
+    background-color: #ffffff;
+}
+
+.MuiButton-root-114.MuiButton-disabled-134 {
+    color: #ffffff !important;
 }

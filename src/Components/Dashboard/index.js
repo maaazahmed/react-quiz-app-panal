@@ -5,19 +5,23 @@ import Step from '@material-ui/core/Step';
 import StepButton from '@material-ui/core/StepButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import AboutQuiz from "./AboutQuiz/index";
+import CreateQuiz from "./CreateQuiz/index"
+import { connect } from "react-redux"
+
+
+
 
 function getSteps() {
-    return ['Additional Information', 'Create an ad group', 'Create an ad', ];
+    return ['Additional Information', 'Create a Quiz'];
 }
 
 function getStepContent(step) {
     switch (step) {
         case 0:
-            return <h1>1</h1> ;
+            return <AboutQuiz />;
         case 1:
-            return <h1>2</h1>;
-        case 2:
-            return <h1>3</h1>;
+            return <CreateQuiz />;
         default:
             return 'Unknown step';
     }
@@ -42,8 +46,6 @@ class Dashboard extends Component {
         let activeStep;
 
         if (this.isLastStep() && !this.allStepsCompleted()) {
-            // It's the last step, but not all steps have been completed,
-            // find the first step that has been completed
             const steps = getSteps();
             activeStep = steps.findIndex((step, i) => !(i in this.state.completed));
         } else {
@@ -67,12 +69,25 @@ class Dashboard extends Component {
     };
 
     handleComplete = () => {
-        const { completed } = this.state;
-        completed[this.state.activeStep] = true;
-        this.setState({
-            completed,
-        });
-        this.handleNext();
+        const {
+            numberOfQuestion,
+            totalMarks,
+            passingMarks,
+            markofaQuistion,
+            time,
+            discription
+        } = this.props.aboutQuizData.aboutQuiz
+        if (numberOfQuestion !== undefined && totalMarks !== undefined && passingMarks !== undefined && markofaQuistion !== undefined && time !== undefined && discription !== undefined) {
+            const { completed } = this.state;
+            completed[this.state.activeStep] = true;
+            this.setState({
+                completed,
+            });
+            this.handleNext();
+        }
+        else{
+            alert("Requied All  feilds")
+        }
     };
 
 
@@ -88,12 +103,9 @@ class Dashboard extends Component {
         return this.completedSteps() === this.totalSteps();
     }
 
-
     render() {
-        const { classes } = this.props;
         const steps = getSteps();
         const { activeStep } = this.state;
-
         return (
             <diiv className="dashboardContainer" >
                 <div className="createQuizContainer" >
@@ -102,8 +114,6 @@ class Dashboard extends Component {
                             return (
                                 <Step key={label}>
                                     <StepButton
-                                      
-                                        onClick={this.handleStep(index)}
                                         completed={this.state.completed[index]}>
                                         {label}
                                     </StepButton>
@@ -119,29 +129,40 @@ class Dashboard extends Component {
                                  </Typography>
                             </div>) : (
                                 <div>
-                                    <Typography>{getStepContent(activeStep)}</Typography>
-                                    <div>
-                                        <Button
+                                    <div style={{}} >{getStepContent(activeStep)}</div>
+                                    <div className="formButtonContainer" >
+                                        {/* <Button
+                                            variant="contained" color="primary"
                                             disabled={activeStep === 0}
                                             onClick={this.handleBack}>
                                             Back
-                                     </Button>
+                                         </Button> */}
                                         {/* <Button
-                                            variant="contained"
-                                            color="primary"
-                                            onClick={this.handleNext}>
-                                            Next
-                                     </Button> */}
+                                              variant="contained"
+                                              color="primary"
+                                              onClick={this.handleNext}>
+                                              Next
+                                           </Button> */}
                                         {activeStep !== steps.length &&
                                             (this.state.completed[this.state.activeStep] ? (
                                                 <Typography variant="caption" >
                                                     Step {activeStep + 1} already completed
                                                 </Typography>
-                                            ) : (
-                                                    <Button variant="contained" color="primary" onClick={this.handleComplete}>
-                                                        {this.completedSteps() === this.totalSteps() - 1 ? 'Submit' : 'Complete Step'}
-                                                    </Button>
-                                                ))}
+                                            )
+                                                :
+                                                (
+                                                    this.completedSteps() === this.totalSteps() - 1 ?
+                                                        // <Button variant="contained" color="primary" onClick={this.nextQuestion.bind()}>
+                                                        //     Submit 
+                                                        // </Button>
+                                                        null
+                                                        :
+                                                        <Button variant="contained" color="primary" onClick={this.handleComplete}>
+                                                            {'Next'}
+                                                        </Button>
+                                                )
+                                            )
+                                        }
                                     </div>
                                 </div>
                             )}
@@ -153,4 +174,25 @@ class Dashboard extends Component {
 }
 
 
-export default Dashboard
+
+const mapStateToProp = (state) => {
+    return ({
+        aboutQuizData: state.root
+    });
+};
+const mapDispatchToProp = (dispatch) => {
+    return {
+        // AllBookings: (data) => {
+        //     dispatch(AllBookings(data))
+        // },
+        // deleteAllbooking: (data) => {
+        //     dispatch(deleteAllbooking(data))
+        // },
+
+    };
+};
+
+
+export default connect(mapStateToProp, mapDispatchToProp)(Dashboard)
+
+
