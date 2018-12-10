@@ -1,6 +1,7 @@
 var express = require("express")
 var router = express.Router()
 var User = require("../models/userModel")
+// var Quize = require("../models/createQuizModel")
 var bcrypt = require("bcrypt");
 var mongoose = require("mongoose")
 mongoose.connect("mongodb://quizapp:maaz1234@ds227664.mlab.com:27664/quiz_data");
@@ -85,10 +86,24 @@ router.post("/SignIn", (req, res) => {
 
 
 
-module.exports = router
+router.post("/createQuiz", (req, res) => {
+    const quizSchema = mongoose.Schema({
+        id: mongoose.Schema.Types.ObjectId,
+        aboutQuiz: { type: Object, required: true },
+        quizArr: { type: Object, required: true }
+    })
 
+    var collection = req.body.aboutQuiz.title.replace(/\s/g, '')
+    var Quize = mongoose.model(collection, quizSchema)
 
+    const quiz = new Quize({
+        _id: new mongoose.Types.ObjectId(),
+        aboutQuiz: req.body.aboutQuiz,
+        quizArr: req.body.quizArr,
+    })
+    quiz.save((success) => {
+        console.log("Quiz Created Successfuly");
+    })
+})
 
-
-
-// 03413542800
+module.exports = router;

@@ -36,38 +36,41 @@ class CreateQuiz extends Component {
 
 
         if (this.state.numberOfQuestion >= 1) {
+            quizArr.push(obj)
             this.setState({
                 numberOfQuestion: this.state.numberOfQuestion - 1,
+                question: "",
+                option_1: "",
+                option_2: "",
+                option_3: "",
+                option_4: "",
             })
-            quizArr.push(obj)
         }
         if (this.state.numberOfQuestion === 1) {
-            console.log(quizArr)
             this.setState({
                 isSubmintQuizbtin: true,
             })
         }
-
-
-        // console.log(this.props.aboutQuiz.aboutQuiz.numberOfQuestion)
-
-        // this.setState({
-        //     question: "",
-        //     option_1: "",
-        //     option_2: "",
-        //     option_3: "",
-        //     option_4: "",
-        // })
     }
 
     submintQuiz() {
-        if (this.state.numberOfQuestion === 1) {
-            console.log(quizArr)
-            this.setState({
-                isSubmintQuizbtin: true,
-            })
+        let aboutQuiz = this.props.aboutQuiz.aboutQuiz;
+        const obj = {
+            aboutQuiz,
+            quizArr:{quizArr}
         }
-        console.log(this.state.numberOfQuestion)
+        console.log(obj)
+        fetch('http://localhost:8000/createQuiz', {
+            method: 'POST',
+            body: JSON.stringify(obj),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+        }).then((a) => {
+        }).catch((error) => {
+            console.log(error)
+        })
     }
 
 

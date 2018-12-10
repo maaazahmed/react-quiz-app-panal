@@ -10,8 +10,6 @@ import CreateQuiz from "./CreateQuiz/index"
 import { connect } from "react-redux"
 
 
-
-
 function getSteps() {
     return ['Additional Information', 'Create a Quiz'];
 }
@@ -38,7 +36,6 @@ class Dashboard extends Component {
 
     }
     totalSteps = () => {
-        // alert("complete")
         return getSteps().length;
     };
 
